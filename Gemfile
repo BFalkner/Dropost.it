@@ -30,5 +30,8 @@ gem 'jquery-rails'
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
-  gem 'rspec-rails'
 end
+
+gem "rspec-rails", :group => [:development, :test]
+gem "haml"
+gem "facebooker2", :git => 'https://github.com/mmangino/facebooker2.git'
