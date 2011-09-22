@@ -35,3 +35,5 @@ end
 gem "rspec-rails", :group => [:development, :test]
 gem "haml"
 gem "facebooker2", :git => 'https://github.com/mmangino/facebooker2.git'
+gem 'factory_girl_rails'
+gem "rake", "0.8.7"
