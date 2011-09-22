@@ -1,4 +1,8 @@
 DropostIt::Application.routes.draw do
+  get "purchase/:vendor_slug" => "purchase#new"
+
+  get "vendors" => "vendors#index"
+
   root :to => 'static#index'
   
   # The priority is based upon order of creation:
