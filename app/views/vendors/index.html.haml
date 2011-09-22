@@ -1,3 +1,5 @@
 %ul
   - @vendors.each do |vendor|
-    %li.vendor= vendor.name
+    %li.vendor
+      .name= vendor.name
+      .link= link_to "Purchase", url_for(:action => "new", :controller => "purchase", :vendor_slug => vendor.slug)
