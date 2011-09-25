@@ -1,0 +1,17 @@
+%script{:src => "http://connect.facebook.net/en_US/all.js"}
+#fb-root
+:javascript
+  FB.init({
+    appId  : '#{facebook_app_id}',
+    status : true, // check login status
+    cookie : true, // enable cookies to allow the server to access the session
+    xfbml  : true, // parse XFBML
+    channelURL : "#{root_url}channel.html", // channel.html file
+    oauth  : true // enable OAuth 2.0
+  });
+- if authenticated?
+  Logged in!
+
+- else
+  %fb:login-button{:onlogin => "location.href = \"#{login_url}\""} Login with Facebook
+
