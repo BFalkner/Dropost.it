@@ -1,11 +1,3 @@
-GIT
-  remote: https://github.com/mmangino/facebooker2.git
-  revision: 31fac9a7736197fd545703af0eadfa4b6e01ba17
-  specs:
-    facebooker2 (0.0.11)
-      mogli (>= 0.0.12)
-      ruby-hmac
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -40,6 +32,7 @@ GEM
       multi_json (~> 1.0)
     ansi (1.3.0)
     arel (2.2.1)
+    attr_required (0.0.3)
     bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
     builder (3.0.0)
@@ -52,39 +45,46 @@ GEM
     coffee-script-source (1.1.2)
     diff-lcs (1.1.3)
     erubis (2.7.0)
-    execjs (1.2.6)
+    execjs (1.2.9)
       multi_json (~> 1.0)
-    factory_girl (2.1.0)
+    factory_girl (2.1.2)
+      activesupport
     factory_girl_rails (1.2.0)
       factory_girl (~> 2.1.0)
       railties (>= 3.0.0)
+    fb_graph (2.1.7)
+      httpclient (>= 2.2.0.2)
+      rack-oauth2 (>= 0.9.4)
     haml (3.1.3)
-    hashie (1.1.0)
     hike (1.2.1)
-    httparty (0.8.0)
-      multi_json
-      multi_xml
+    httpclient (2.2.1)
     i18n (0.6.0)
     jquery-rails (1.0.14)
       railties (~> 3.0)
       thor (~> 0.14)
+    json (1.6.1)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     mime-types (1.16)
-    mogli (0.0.32)
-      hashie (~> 1.1.0)
-      httparty (>= 0.4.3)
-      multi_json (~> 1.0.3)
+    mocha (0.10.0)
+      metaclass (~> 0.0.1)
     multi_json (1.0.3)
-    multi_xml (0.4.0)
     polyglot (0.3.2)
     rack (1.3.3)
     rack-cache (1.0.3)
       rack (>= 0.4)
     rack-mount (0.8.3)
       rack (>= 1.0.0)
+    rack-oauth2 (0.11.0)
+      activesupport (>= 2.3)
+      attr_required (>= 0.0.3)
+      httpclient (>= 2.2.0.2)
+      i18n
+      json (>= 1.4.3)
+      rack (>= 1.1)
     rack-ssl (1.3.2)
       rack
     rack-test (0.6.1)
@@ -119,7 +119,6 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.6.0)
-    ruby-hmac (0.4.0)
     sass (3.1.7)
     sass-rails (3.1.2)
       actionpack (~> 3.1.0)
@@ -151,10 +150,11 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.1.0)
-  facebooker2!
   factory_girl_rails
+  fb_graph
   haml
   jquery-rails
+  mocha
   rails (= 3.1.0)
   rake (= 0.8.7)
   rspec-rails

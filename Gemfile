@@ -30,9 +30,11 @@ gem 'jquery-rails'
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+  gem 'mocha'
 end
 
 gem "rspec-rails", :group => [:development, :test]
+gem "fb_graph"
 gem "haml"
 gem 'factory_girl_rails'
 gem "rake", "0.8.7"
