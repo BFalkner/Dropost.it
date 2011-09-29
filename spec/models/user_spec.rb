@@ -11,8 +11,7 @@ describe User do
     identifier = "123345"
     auth = auth_stub(:identifier => identifier)
     user = User.login(auth) 
-    user.identifier.should == identifier 
-  
+    user.identifier.should == identifier
   end
   
   it "is created from the auth token with correct access_token" do
@@ -20,7 +19,7 @@ describe User do
   access_token = "123456"
   auth = auth_stub(:access_token => access_token)
   user = User.login(auth)
-  user.access_token.should == access_token   
+  user.access_token.should == access_token
     
   end
   
@@ -40,5 +39,17 @@ describe User do
     
     logged_in_user = User.login(auth)
     logged_in_user.access_token.should == new_access_token
+  end
+
+  describe "#friends" do
+    it "proxies to fb_user" do
+      user = FactoryGirl.build :user
+      fb_user = mock("fb_user")
+
+      fb_user.should_receive(:friends).and_return([:friends])
+      user.should_receive(:fb_user).and_return(fb_user)
+
+      user.friends.should == [:friends]
+    end
   end
 end

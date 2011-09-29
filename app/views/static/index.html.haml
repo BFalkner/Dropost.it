@@ -10,8 +10,9 @@
     oauth  : true // enable OAuth 2.0
   });
 - if authenticated?
-  Logged in!
-
+  - @current_user.friends.each do |user|
+    .user
+      = image_tag user.picture
+      = user.name
 - else
   %fb:login-button{:onlogin => "location.href = \"#{root_url}\""} Login with Facebook
-
