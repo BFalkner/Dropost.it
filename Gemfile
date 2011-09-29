@@ -37,4 +37,3 @@ gem "rspec-rails", :group => [:development, :test]
 gem "fb_graph"
 gem "haml"
 gem 'factory_girl_rails'
-gem "rake", "0.8.7"
