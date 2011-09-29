@@ -1,9 +1,0 @@
-development:
-  app_id: 115122005202246
-  secret: 0e484c5694bdbd0a29a08d87e574864b
-  api_key: 115122005202246
-  
-test:
-  app_id: 115122005202246
-  secret: 0e484c5694bdbd0a29a08d87e574864b
-  api_key: 115122005202246
