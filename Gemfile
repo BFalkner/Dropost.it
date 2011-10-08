@@ -31,6 +31,7 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
   gem 'mocha'
+  gem 'spork', '~> 0.9.0.rc'
 end
 
 gem "rspec-rails", :group => [:development, :test]
