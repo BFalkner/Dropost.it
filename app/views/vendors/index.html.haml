@@ -1,5 +1,19 @@
-%ul
-  - @vendors.each do |vendor|
-    %li.vendor
-      .name= vendor.name
-      .link= link_to "Purchase", url_for(:action => "new", :controller => "purchase", :vendor_slug => vendor.slug)
+= form_for :purchase, :url => {:controller => "purchase", :action => "new"} do |f|
+  %h2 Vendors
+  %ul
+    - @vendors.each do |vendor|
+      %li.vendor
+        .name
+          = radio_button "vendor", "id", vendor.id
+          = vendor.name
+
+  %h2 Friends
+  %ul
+    - @current_user.friends.each do |friend|
+      %li.friend
+        %span.picture= image_tag friend.picture
+        %span.name
+          = radio_button "friend", "id", friend.identifier
+          = friend.name
+
+  = submit_tag

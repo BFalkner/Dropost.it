@@ -10,9 +10,6 @@
     oauth  : true // enable OAuth 2.0
   });
 - if authenticated?
-  - @current_user.friends.each do |user|
-    .user
-      = image_tag user.picture
-      = user.name
+  = link_to "Select Vendor", vendors_url
 - else
-  %fb:login-button{:onlogin => "location.href = \"#{root_url}\""} Login with Facebook
+  %fb:login-button{:onlogin => "location.href = \"#{vendors_url}\"", :scope => "email,friends_activities"} Login with Facebook

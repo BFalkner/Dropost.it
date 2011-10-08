@@ -1,8 +1,9 @@
 class PurchaseController < ApplicationController
-  def new
-    vendor_slug = params[:vendor_slug]
-    @vendor = Vendor.first(:conditions => {:slug => vendor_slug})
-  end
   
+  def new
+    @vendor = Vendor.find(params[:vendor][:id])
+    @friend = FbGraph::User.fetch(params[:friend][:id], :access_token => @current_user.access_token)
+  end
 
+  
 end

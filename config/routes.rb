@@ -1,5 +1,5 @@
 DropostIt::Application.routes.draw do
-  get "purchase/:vendor_slug" => "purchase#new"
+  post "purchase" => "purchase#new"
 
   get "vendors" => "vendors#index"
 
